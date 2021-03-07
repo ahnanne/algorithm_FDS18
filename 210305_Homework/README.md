@@ -8,41 +8,41 @@
 
   - num이 홀수일 경우 'Odd'를, 짝수일 경우 'Even'을 반환하기
 
-- 소스코드
+  - 소스코드
 
-    ```js
-    function solution(num) {
-        return num % 2 ? 'Odd' : 'Even';
-    }
-    ```
+      ```js
+      function solution(num) {
+          return num % 2 ? 'Odd' : 'Even';
+      }
+      ```
 
 - 문제2.
 
   - 2016년 a월 b일의 요일 반환하기
 
-- 소스코드
+  - 소스코드
 
-    ```js
-    function solution(a, b) {
-      const day = new Date(2016, a - 1, b).getDay();
+      ```js
+      function solution(a, b) {
+        const day = new Date(2016, a - 1, b).getDay();
 
-      switch (day) {
-        case 0:
-          return 'SUN';
-        case 1:
-          return 'MON';
-        case 2:
-          return 'TUE';
-        case 3:
-          return 'WED';
-        case 4:
-          return 'THU';
-        case 5:
-          return 'FRI';
-        case 6:
-          return 'SAT';
-        default:
-          return '';
+        switch (day) {
+          case 0:
+            return 'SUN';
+          case 1:
+            return 'MON';
+          case 2:
+            return 'TUE';
+          case 3:
+            return 'WED';
+          case 4:
+            return 'THU';
+          case 5:
+            return 'FRI';
+          case 6:
+            return 'SAT';
+          default:
+            return '';
+        }
       }
-    }
-    ```
+      ```
