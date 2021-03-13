@@ -127,27 +127,51 @@ class DoublyLinkedList {
       curr = curr.next;
     }
 
-    // 예외 처리 2 : tail일 때
+    // 예외 처리 2 : 제거해야 하는 노드가 tail일 경우
     if (curr === this.tail) {
       curr.prev.next = null;
-      this.tail = null;
+      this.tail = curr.prev;
     } else {
-      curr.prev.next = curr.next.prev;
-      curr.next.prev = curr.prev.next;
+      curr.prev.next = curr.next;
+      curr.next.prev = curr.prev;
     }
 
     return true;
   }
-  /*
 
   print() {
+    let curr = this.head;
 
+    if (!curr) {
+      console.log('[]');
+      return;
+    }
+
+    let elems = '';
+
+    while (curr) {
+      elems += ` ${curr.value},`;
+      curr = curr.next;
+    }
+    console.log(`[${elems.trim().slice(0, -1)}]`);
   }
 
-  printInv() {
+  printInv() { // print inverse ?
+    let curr = this.tail;
 
+    if (!curr) {
+      console.log('[]');
+      return;
+    }
+
+    let elems = '';
+
+    while (curr) {
+      elems += ` ${curr.value},`;
+      curr = curr.prev;
+    }
+    console.log(`[${elems.trim().slice(0, -1)}]`);
   }
-  */
 }
 
 /** test */
@@ -178,6 +202,21 @@ console.log(testList.access(2));
 
 testList.insert(0, 'testData5');
 printTest();
-
 testList.insert(2, 'testData6');
 printTest();
+
+/*
+testList.remove(1);
+printTest();
+testList.remove(0);
+printTest();
+testList.remove(1);
+printTest();
+testList.remove(0); // head만 남은 상태에서 head 노드 제거하기
+printTest(); // DoublyLinkedList { head: null, tail: null }
+*/
+
+testList.print();
+// [testData1, testData5, testData4, testData6]
+testList.printInv();
+// [testData6, testData4, testData5, testData1]
