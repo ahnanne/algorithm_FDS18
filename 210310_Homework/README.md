@@ -83,30 +83,26 @@
         }
 
         insert(index, value) {
-          const node = new Node(value, null, null);
-
           let curr = this.head;
-          if (!curr) return false;
 
-          // index === 0인 경우 아래 for문 실행하지 않고 바로 if문으로 넘어감.
+          // index === 0인 경우 prepend와 동일함.
+          if (index === 0) {
+            this.prepend(value);
+            return true;
+          }
+
           for (let i = 0; i < index; i++) {
             if (!curr.next) return false;
             curr = curr.next;
           }
 
-          if (curr === this.tail) {
-            // for문 실행 후 예외 처리
-            // curr === this.tail일 경우 -> append와 동일
-            curr.next = node;
-            node.prev = curr;
-            this.tail = node;
-          } else {
-            curr.next.prev = node;
-            node.next = curr.next;
+          const node = new Node(value, null, null);
 
-            curr.next = node;
-            node.prev = curr;
-          }
+          curr.prev.next = node;
+          node.prev = curr.prev;
+
+          curr.prev = node;
+          node.next = curr;
 
           return true;
         }
@@ -228,7 +224,7 @@
       */
 
       testList.print();
-      // [testData1, testData5, testData4, testData6]
+      // [testData5, testData1, testData6, testData4]
       testList.printInv();
-      // [testData6, testData4, testData5, testData1]
+      // [testData4, testData6, testData1, testData5]
       ```
