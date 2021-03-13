@@ -46,6 +46,7 @@ class DoublyLinkedList {
     if (index <= 0) return false;
 
     let curr = this.head;
+    if (!curr) return false;
 
     for (let i = 0; i < index; i++) {
       if (!curr.next) return false;
@@ -53,14 +54,24 @@ class DoublyLinkedList {
     }
 
     this.head = curr;
+    this.head.prev = null;
+
     return true;
   }
-  /*
 
   access(index) {
+    let curr = this.head;
+    if (!curr) return false;
 
+    for (let i = 0; i < index; i++) {
+      if (!curr.next) return false;
+      curr = curr.next;
+    }
+
+    return curr;
   }
 
+  /*
   insert(index, value) {
 
   }
@@ -83,6 +94,7 @@ class DoublyLinkedList {
 const printTest = () => console.log(testList);
 
 const testList = new DoublyLinkedList();
+
 printTest(); // DoublyLinkedList { head: null, tail: null }
 console.log(testList.isEmpty()); // true
 
@@ -99,3 +111,7 @@ printTest();
 console.log(testList.setHead(4)); // false
 console.log(testList.setHead(2)); // true
 printTest();
+
+console.log(testList.access(0));
+console.log(testList.access(1));
+console.log(testList.access(2));
