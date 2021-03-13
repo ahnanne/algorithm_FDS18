@@ -80,18 +80,7 @@ class DoublyLinkedList {
     let curr = this.head;
     if (!curr) return false;
 
-    // for문 실행 전 예외 처리
-    // index === 0일 경우
-    if (index === 0) {
-      curr.next.prev = node;
-      node.next = curr.next;
-
-      curr.next = node;
-      node.prev = curr;
-
-      return true;
-    }
-
+    // index === 0인 경우 아래 for문 실행하지 않고 바로 if문으로 넘어감.
     for (let i = 0; i < index; i++) {
       if (!curr.next) return false;
       curr = curr.next;
@@ -114,10 +103,42 @@ class DoublyLinkedList {
     return true;
   }
 
-  /*
   remove(index) {
+    let curr = this.head;
+    if (!curr) return false;
 
+    // 예외 처리 1 : index === 0이어서 head를 제거해야 하는 경우
+    if (index === 0) {
+      // list에 head 밖에 없을 경우
+      if (!curr.next) {
+        this.head = null;
+        this.tail = null;
+      } else {
+        this.head = curr.next;
+        // 이전 head는 garbage collecting 되도록 하기
+        this.head.prev = null;
+      }
+
+      return true;
+    }
+
+    for (let i = 0; i < index; i++) {
+      if (!curr.next) return false;
+      curr = curr.next;
+    }
+
+    // 예외 처리 2 : tail일 때
+    if (curr === this.tail) {
+      curr.prev.next = null;
+      this.tail = null;
+    } else {
+      curr.prev.next = curr.next.prev;
+      curr.next.prev = curr.prev.next;
+    }
+
+    return true;
   }
+  /*
 
   print() {
 
