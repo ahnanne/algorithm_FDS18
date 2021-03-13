@@ -175,9 +175,8 @@ class DoublyLinkedList {
 }
 
 /** test */
-const printTest = () => console.log(testList);
-
 const testList = new DoublyLinkedList();
+const printTest = () => console.log(testList);
 
 printTest(); // DoublyLinkedList { head: null, tail: null }
 console.log(testList.isEmpty()); // true
