@@ -1,7 +1,7 @@
 # 210310 Homework
 
 ## 문제 및 코드
-- 문제 : 양방향 연결 리스트(Doubly Linked List) 구현하기 ([코드 파일 바로가기](https://github.com/ahnanne/algorithm_FDS18/blob/main/210310_Homework/doublyLinkedList.js))
+- 문제 : 양방향 연결 리스트(Doubly Linked List) 구현하기 ([코드 파일 바로가기](https://github.com/ahnanne/algorithm_FDS18/blob/main/210310_Homework/after.js))
 
   - 솔루션 코드
 
