@@ -71,7 +71,7 @@ class DoublyLinkedList {
       curr = curr.next;
     }
 
-    return curr;
+    return curr.value;
   }
 
   insert(index, value) {
@@ -186,10 +186,12 @@ printTest();
 
 testList.append('testData4');
 printTest();
+testList.print();
 
 console.log(testList.setHead(4)); // false
 console.log(testList.setHead(2)); // true
 printTest();
+testList.print();
 
 console.log(testList.access(0));
 console.log(testList.access(1));
@@ -197,18 +199,29 @@ console.log(testList.access(2));
 
 testList.insert(0, 'testData5');
 printTest();
+testList.print();
 testList.insert(2, 'testData6');
 printTest();
+testList.print(); // [testData5, testData1, testData6, testData4]
+console.log(testList.insert(4, 'testData7')); // false
 
 /*
 testList.remove(1);
 printTest();
+testList.print();
+
 testList.remove(0);
 printTest();
+testList.print();
+
 testList.remove(1);
 printTest();
+testList.print();
+
 testList.remove(0); // head만 남은 상태에서 head 노드 제거하기
 printTest(); // DoublyLinkedList { head: null, tail: null }
+testList.print();
+console.log(testList.remove(0)); // false
 */
 
 testList.print();
