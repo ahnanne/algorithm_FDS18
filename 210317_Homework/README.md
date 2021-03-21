@@ -86,7 +86,7 @@
             idx = idx.next;
           }
 
-          return console.log(q);
+          console.log(q);
         }
       }
       ```
