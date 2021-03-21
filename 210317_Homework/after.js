@@ -71,11 +71,11 @@ class LinkedQueue {
 
     // underflow가 아니라면 큐 출력
     const q = [];
-    let pointer = this.front;
+    let idx = this.front;
 
     for (let i = 0; i < this.size; i++) {
-      q.push(pointer.value);
-      pointer = pointer.next;
+      q.push(idx.value);
+      idx = idx.next;
     }
 
     return console.log(q);
