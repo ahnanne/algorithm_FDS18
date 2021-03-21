@@ -72,7 +72,10 @@
 
         print() {
           // underflow 여부부터 확인
-          if (this.size === 0) return console.error(new Error('조회할 노드가 없습니다.'));
+          if (this.size === 0) {
+            console.error(new Error('조회할 노드가 없습니다.'));
+            return;
+          }
 
           // underflow가 아니라면 큐 출력
           const q = [];
