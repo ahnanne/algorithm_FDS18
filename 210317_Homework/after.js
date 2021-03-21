@@ -83,7 +83,7 @@ class LinkedQueue {
 
 const queue = new LinkedQueue();
 
-// queue.print();
+queue.print(); // Error: 조회할 노드가 없습니다.
 
 queue.put(1);
 queue.put(2);
@@ -91,25 +91,20 @@ queue.put(3);
 queue.put(4);
 queue.put(5);
 queue.put(6);
-console.log(queue);
+queue.print(); // [ 1, 2, 3, 4, 5, 6 ]
 
-queue.print(); // [1, 2, 3, 4, 5, 6]
 console.log(queue.get()); // 1
 console.log(queue.get()); // 2
 console.log(queue.get()); // 3
 console.log(queue.get()); // 4
-console.log(queue.get()); // 5
-console.log(queue.get()); // 6
-console.log(queue.get()); // false
-
-console.log(queue); // LinkedQueue { front: null, rear: null, size: 0 }
+queue.print(); // [ 5, 6 ]
 
 queue.put(4);
 queue.put(5);
 queue.put(6);
-queue.print(); // [4, 5, 6]
+queue.print(); // [ 5, 6, 4, 5, 6 ]
 
-console.log(queue.get());
-console.log(queue.get());
-console.log(queue.get());
-queue.print(); // Error: 조회할 노드가 없습니다.
+console.log(queue.get()); // 5
+console.log(queue.get()); // 6
+console.log(queue.get()); // 4
+queue.print(); // [ 5, 6 ]
