@@ -64,7 +64,10 @@ class LinkedQueue {
 
   print() {
     // underflow 여부부터 확인
-    if (this.size === 0) return console.error(new Error('조회할 노드가 없습니다.'));
+    if (this.size === 0) {
+      console.error(new Error('조회할 노드가 없습니다.'));
+      return;
+    }
 
     // underflow가 아니라면 큐 출력
     const q = [];
@@ -84,6 +87,7 @@ class LinkedQueue {
 const queue = new LinkedQueue();
 
 queue.print(); // Error: 조회할 노드가 없습니다.
+console.log(queue.isEmpty()); // true
 
 queue.put(1);
 queue.put(2);
@@ -108,3 +112,5 @@ console.log(queue.get()); // 5
 console.log(queue.get()); // 6
 console.log(queue.get()); // 4
 queue.print(); // [ 5, 6 ]
+
+console.log(queue.isEmpty()); // false
