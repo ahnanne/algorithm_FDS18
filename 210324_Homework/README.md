@@ -130,8 +130,29 @@
 
       console.log(binaryTree);
       console.log(binaryTree.preorder());
+      /*
+        [
+          'a', 'b', 'd', 'h',
+          'i', 'e', 'j', 'k',
+          'c', 'f', 'g'
+        ]
+      */
       console.log(binaryTree.inorder());
+      /*
+        [
+          'h', 'd', 'i', 'b',
+          'j', 'e', 'k', 'a',
+          'f', 'c', 'g'
+        ]
+      */
       console.log(binaryTree.postorder());
+      /*
+        [
+          'h', 'i', 'd', 'j',
+          'k', 'e', 'b', 'f',
+          'g', 'c', 'a'
+        ]
+      */
 
       console.log(binaryTree.bfs(100)); // false
       console.log(binaryTree.bfs('j')); // true
