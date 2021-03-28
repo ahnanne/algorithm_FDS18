@@ -80,9 +80,9 @@ class BinaryTree {
     queue.push(this.root);
 
     while (queue.length > 0) {
-      const front = queue.shift();
+      const node = queue.shift();
 
-      if (front.value === value) return true;
+      if (node.value === value) return true;
 
       /**
       let s = '';
@@ -103,8 +103,8 @@ class BinaryTree {
         k
       */
 
-      if (front.left !== undefined) queue.push(front.left);
-      if (front.right !== undefined) queue.push(front.right);
+      if (node.left !== undefined) queue.push(node.left);
+      if (node.right !== undefined) queue.push(node.right);
     }
 
     return false;
@@ -114,11 +114,11 @@ class BinaryTree {
     let isFound = false;
 
     function recursive(node) {
-      if (node === undefined) return;
+      if (!node) return;
 
       if (node.value === value) {
         isFound = true;
-        return isFound;
+        return;
       }
       recursive(node.left);
       recursive(node.right);
