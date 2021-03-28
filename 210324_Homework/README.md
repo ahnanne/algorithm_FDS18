@@ -160,3 +160,5 @@
       console.log(binaryTree.dfs(100)); // false
       console.log(binaryTree.dfs('j')); // true
       ```
+      
+      <img src="https://user-images.githubusercontent.com/54733637/112740377-79316700-8fb7-11eb-94d3-f42cef3d718a.png" width="300px" alt="node tree" />
