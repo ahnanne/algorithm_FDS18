@@ -145,4 +145,4 @@ console.log(binaryTree.bfs(100)); // false
 console.log(binaryTree.bfs('j')); // true
 
 console.log(binaryTree.dfs(100)); // false
-console.log(binaryTree.bfs('j')); // true
+console.log(binaryTree.dfs('j')); // true
